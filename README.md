@@ -1,2 +1,2 @@
 # Current-Hobby
-Personal usage only
+Please note: Personal usage only
