@@ -28,12 +28,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__useraccount_userachievement_userachievement_component__ = __webpack_require__("./src/app/useraccount/userachievement/userachievement.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__useraccount_userhistory_userhistory_component__ = __webpack_require__("./src/app/useraccount/userhistory/userhistory.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__useraccount_usercollection_usercollection_component__ = __webpack_require__("./src/app/useraccount/usercollection/usercollection.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__useraccount_usersetting_usersetting_component__ = __webpack_require__("./src/app/useraccount/usersetting/usersetting.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -47,7 +49,8 @@ var routes = [
             { path: '', redirectTo: 'achievement', pathMatch: 'full' },
             { path: 'achievement', component: __WEBPACK_IMPORTED_MODULE_3__useraccount_userachievement_userachievement_component__["a" /* UserachievementComponent */] },
             { path: 'history', component: __WEBPACK_IMPORTED_MODULE_4__useraccount_userhistory_userhistory_component__["a" /* UserhistoryComponent */] },
-            { path: 'collection', component: __WEBPACK_IMPORTED_MODULE_5__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */] }
+            { path: 'collection', component: __WEBPACK_IMPORTED_MODULE_5__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */] },
+            { path: 'setting', component: __WEBPACK_IMPORTED_MODULE_6__useraccount_usersetting_usersetting_component__["a" /* UsersettingComponent */] }
         ]
     }
 ];
@@ -154,6 +157,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__useraccount_userhistory_userhistory_component__ = __webpack_require__("./src/app/useraccount/userhistory/userhistory.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_globalvariables_achievementdata_service__ = __webpack_require__("./src/app/services/globalvariables/achievementdata.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__useraccount_usercollection_usercollection_component__ = __webpack_require__("./src/app/useraccount/usercollection/usercollection.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__useraccount_usersetting_usersetting_component__ = __webpack_require__("./src/app/useraccount/usersetting/usersetting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_globalvariables_usersetting_service__ = __webpack_require__("./src/app/services/globalvariables/usersetting.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -164,6 +169,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 /* --------	3rd party module --------  */
+
+
 
 
 
@@ -184,7 +191,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__useraccount_userachievement_userachievement_component__["a" /* UserachievementComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__useraccount_userachievement_achievementsnippet_achievementsnippet_component__["a" /* AchievementsnippetComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__useraccount_userhistory_userhistory_component__["a" /* UserhistoryComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */]
+                __WEBPACK_IMPORTED_MODULE_11__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__useraccount_usersetting_usersetting_component__["a" /* UsersettingComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -193,7 +201,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ngx_scrollbar__["b" /* ScrollbarModule */] //3rd party module for custom scrollbar in Angular
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_10__services_globalvariables_achievementdata_service__["a" /* AchievementdataService */]
+                __WEBPACK_IMPORTED_MODULE_10__services_globalvariables_achievementdata_service__["a" /* AchievementdataService */], __WEBPACK_IMPORTED_MODULE_13__services_globalvariables_usersetting_service__["a" /* UsersettingService */]
             ],
             /*
               All components about to be loaded "dynamically" need to be declared in the entryComponents array of
@@ -246,6 +254,40 @@ var AchievementdataService = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], AchievementdataService);
     return AchievementdataService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/globalvariables/usersetting.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersettingService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UsersettingService = /** @class */ (function () {
+    function UsersettingService() {
+        this.security = {
+            password: "", phone: "", email: "", allowance1: true, allowance2: true, allowance3: true,
+            province: "", notification: false
+        };
+    }
+    UsersettingService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], UsersettingService);
+    return UsersettingService;
 }());
 
 
@@ -570,9 +612,6 @@ var UsercollectionComponent = /** @class */ (function () {
             "background-image": "linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)",
             "background-size": "1rem 1rem", "animation": "progress-bar-stripes 0.5s linear infinite"
         });
-        $("figure.useraccountCollectionItem>div.blur").click(function () {
-            console.log(this);
-        });
     };
     UsercollectionComponent.prototype.ngAfterViewInit = function () {
         this.scrollRef.scrollXTo(1, 50);
@@ -792,6 +831,79 @@ function drawFanChart(){
     });
 }
 */
+
+
+/***/ }),
+
+/***/ "./src/app/useraccount/usersetting/usersetting.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "#useraccountSettingMain{\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tbackground-color:  #ebf1ff;\r\n\tpadding: 1.25rem 1.5rem;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar>button{\r\n\theight: 3rem;\r\n\twidth: 12rem;\r\n\tfont-size: 1.2rem;\r\n\tline-height:1.2rem;\r\n\tborder: 1px solid #282c34;\r\n\tborder-bottom: 1px solid white;\r\n\tbackground-color: #282c34;\r\n\tcolor: #61dafb;\r\n\toutline: none;\r\n\tfont-weight: bold;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar>button:hover{\r\n\tbackground-color: #61dafb;\r\n\tcolor: white;\r\n\tcursor: pointer;\r\n\t-webkit-animation: userSettingBarFont 0.5s;\r\n\t        animation: userSettingBarFont 0.5s;\r\n}\r\n\r\n@-webkit-keyframes userSettingBarFont{\r\n\t0% {font-size: 1.2rem; line-height:1.2rem;}\r\n\t50% {font-size: 1.65rem; line-height:1.65rem;}\r\n\t100% {font-size: 1.2rem; line-height:1.2rem;}\r\n}\r\n\r\n@keyframes userSettingBarFont{\r\n\t0% {font-size: 1.2rem; line-height:1.2rem;}\r\n\t50% {font-size: 1.65rem; line-height:1.65rem;}\r\n\t100% {font-size: 1.2rem; line-height:1.2rem;}\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar>button:active,\r\n#useraccountSettingMain div.useraccountSettingBar>button.active{\r\n\tbackground-color: #0d992beb;\r\n\tcolor: white;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar>button:first-child{\r\n\tborder-top-left-radius: 0.5rem;\r\n\tborder-top-right-radius: 0.5rem;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingBar>button:last-child{\r\n\tborder-bottom-left-radius: 0.5rem;\r\n\tborder-bottom-right-radius: 0.5rem;\r\n\tborder-bottom: 0px;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent{\r\n\theight: auto;\r\n\twidth: 36rem;\r\n\tborder: 1px solid rgb(34, 45, 66);\r\n\tborder-radius: 0.5rem;\r\n\tpadding: 0.675rem 1.25rem;\r\n\tbackground-color: rgb(34, 45, 66);\r\n\tfont-size: 1rem;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent label{\r\n\tfont-weight: bold;\r\n\tcolor: white;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent input[type=\"password\"],\r\n#useraccountSettingMain div.useraccountSettingContent input[type=\"email\"],\r\n#useraccountSettingMain div.useraccountSettingContent input[type=\"number\"],\r\n#useraccountSettingMain div.useraccountSettingContent div.selectDiv,\r\n#useraccountSettingMain div.useraccountSettingContent div.checkboxDiv{\r\n\tpadding: 0.125rem 0.25rem;\r\n}\r\n\r\n#userSettingProvince{\r\n\twidth: 100%;\r\n\tborder-radius: 0.25rem;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent input[type=\"checkbox\"]{\r\n\tdisplay: none;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.selectDiv{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: justify;\r\n\t    -ms-flex-pack: justify;\r\n\t        justify-content: space-between;\r\n\tposition: relative;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.selectDiv:hover{\r\n\tcursor: pointer;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.selectOptionDiv{\r\n\t-ms-flex-wrap: wrap;\r\n\t    flex-wrap: wrap;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\tposition: absolute;\r\n\tleft: 0.75rem;\r\n\ttop: 2.25rem;\r\n\tbackground-color: #282c34;\r\n\tborder: 1px solid #282c34;\r\n\theight: auto;\r\n\twidth: calc (100% - 1.5rem);\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\tz-index: 3;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.hide{\r\n\tdisplay: none;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.selectOptionDiv>p{\r\n\tcolor: #fff;\r\n\tpadding: 0.375rem;\r\n\tmargin: 0.125rem;\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\ttext-align: center;\r\n\tborder: 0.5px solid #fff;\r\n\twidth: 2.5rem;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.selectOptionDiv>p:hover{\r\n\tbackground-color: orange;\r\n\tcursor: pointer;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.checkboxDiv{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.No{\r\n\tbackground-color: #f5f5f5c2;\r\n\tborder-color: #f5f5f5c2;\r\n\tcolor: black;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.Yes{\r\n\tbackground-color: green;\r\n\tborder-color: green;\r\n\tcolor: #fff;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.checkboxDiv:hover{\r\n\tcursor: pointer;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.checkboxDiv>div{\r\n\theight: 1.45rem;\r\n\tfont-weight: bold;\r\n}\r\n\r\n#useraccountSettingMain div.useraccountSettingContent div.checkboxDiv>div>span{\r\n\tfont-size: 1.2rem;\r\n\tline-height: 1.2rem;\r\n}\r\n\r\n#useraccountSettingMain .custom-checkbox .custom-control-input:checked~.custom-control-label::before{\r\n\tbackground-color: #23b323f0;\r\n}\r\n\r\n#useraccountSettingMain .custom-checkbox .custom-control-label::before{\r\n\tborder-radius: 0.5rem;\r\n}\r\n\r\n#useraccountSettingMain label.custom-control-label:hover{\r\n\tcursor: pointer;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/useraccount/usersetting/usersetting.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"useraccountSettingMain\">\n\t<div class=\"useraccountSettingBar\">\n\t\t<button [attr.menuid]=\"1\" (click)=\"MenubarClicked($event)\">Security</button>\n\t\t<button [attr.menuid]=\"2\" (click)=\"MenubarClicked($event)\">Privacy</button>\n\t\t<button [attr.menuid]=\"3\" (click)=\"MenubarClicked($event)\">Invitation</button>\n\t\t<button [attr.menuid]=\"4\" (click)=\"MenubarClicked($event)\">Block List</button>\n\t\t<button [attr.menuid]=\"5\" (click)=\"MenubarClicked($event)\">Shopping Cart</button>\n\t\t<button [attr.menuid]=\"6\" (click)=\"MenubarClicked($event)\">Payment</button>\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===1\">\n\t\t<div class=\"row\">\n\t\t\t<label for=\"userSettingPassword\" class=\"col\">Password</label>\n\t\t\t<label for=\"userSettingPhone\" class=\"col\">Phone Number</label>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col\">\n\t\t\t\t<input id=\"userSettingPassword\" type=\"password\" class=\"form-control\" \n\t\t\t\t\t   [(ngModel)]=\"security.password\" placeholder=\"Your password...\">\n\t\t\t</div>\n\t\t\t<div class=\"col\">\n\t\t\t\t<input id=\"userSettingPhone\" type=\"number\" class=\"form-control\" \n\t\t\t\t\t   [(ngModel)]=\"security.phone\" placeholder=\"Your phone number...\">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row mt-4\">\n\t\t\t<label for=\"userSettingEmail\" class=\"col\">Emergency Email</label>\n\t\t\t<label class=\"col\">Devices Allowance</label>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col\">\n\t\t\t\t<input id=\"userSettingEmail\" type=\"email\" class=\"form-control\" \n\t\t\t\t\t   [(ngModel)]=\"security.email\" placeholder=\"Your email...\">\n\t\t\t</div>\n\t\t\t<div class=\"col d-flex justify-content-between\">\n\t\t\t\t<div class=\"custom-control custom-checkbox\">\n  \t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"devicesAllowance01\" [(ngModel)]=\"security.allowance1\">\n  \t\t\t\t\t<label class=\"custom-control-label\" for=\"devicesAllowance01\">Laptop</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"custom-control custom-checkbox\">\n  \t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"devicesAllowance02\" [(ngModel)]=\"security.allowance2\">\n  \t\t\t\t\t<label class=\"custom-control-label\" for=\"devicesAllowance02\">Phone</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"custom-control custom-checkbox\">\n  \t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"devicesAllowance03\" [(ngModel)]=\"security.allowance3\">\n  \t\t\t\t\t<label class=\"custom-control-label\" for=\"devicesAllowance03\">Tablet</label>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row mt-4\">\n\t\t\t<label for=\"userSettingProvince\" class=\"col\">Province Lock</label>\n\t\t\t<label for=\"userSettingNotification\" class=\"col\">Login Notification</label>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col\">\n\t\t\t\t<div class=\"form-control selectDiv\" [attr.value]=\"security.province\" (click)=\"openSelect()\">\n\t\t\t\t\t<span *ngIf=\"security.province.length!=0\">{{security.province}}</span> \n\t\t\t\t\t<span *ngIf=\"security.province.length===0\">Click to browse...</span> \n\t\t\t\t\t<a><i class=\"fas fa-chevron-circle-down\"></i></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"selectOptionDiv hide\">\n\t\t\t\t\t<p *ngFor=\"let item of province\" (click)=\"chooseSelect($event)\">{{item}}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col\">\n\t\t\t\t<div *ngIf=\"security.notification===false\" class=\"form-control checkboxDiv No\" (click)=\"toggleNotification()\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\tNO Notification <span><i class=\"far fa-frown\"></i></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div *ngIf=\"security.notification===true\" class=\"form-control checkboxDiv Yes\" (click)=\"toggleNotification()\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\tNotification Actived <span><i class=\"far fa-smile\"></i></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===2\">\n\t\tPrivacy\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===3\">\n\t\tInvitation\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===4\">\n\t\tBlock List\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===5\">\n\t\tShopping Cart\n\t</div>\n\t<div class=\"useraccountSettingContent\" *ngIf=\"currentOpenID===6\">\n\t\tPayment\n\t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/useraccount/usersetting/usersetting.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersettingComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_globalvariables_usersetting_service__ = __webpack_require__("./src/app/services/globalvariables/usersetting.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UsersettingComponent = /** @class */ (function () {
+    function UsersettingComponent(usersetting) {
+        this.usersetting = usersetting;
+        this.currentOpenID = 1; //default is 1
+        this.province = ["AB", "BC", "MB", "NB", "NL", "NT", "NS", "NU", "ON", "PE", "QC", "SK", "YT"];
+        this.security = usersetting.security;
+    }
+    UsersettingComponent.prototype.ngOnInit = function () {
+        $("app-usersetting").css("flex", "1");
+        $("#useraccountSettingMain div.useraccountSettingBar>button").eq(0).addClass("active");
+    };
+    UsersettingComponent.prototype.MenubarClicked = function (event) {
+        $("#useraccountSettingMain div.useraccountSettingBar>button").eq(this.currentOpenID - 1).removeClass("active");
+        this.currentOpenID = Number($(event.target).attr("menuid"));
+        $("#useraccountSettingMain div.useraccountSettingBar>button").eq(this.currentOpenID - 1).addClass("active");
+    };
+    UsersettingComponent.prototype.openSelect = function () {
+        $("#useraccountSettingMain div.useraccountSettingContent div.selectOptionDiv").toggleClass("hide");
+    };
+    UsersettingComponent.prototype.chooseSelect = function (event) {
+        var value = $(event.target).text();
+        this.security.province = value;
+    };
+    UsersettingComponent.prototype.toggleNotification = function () {
+        this.security.notification = !this.security.notification;
+    };
+    UsersettingComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-usersetting',
+            template: __webpack_require__("./src/app/useraccount/usersetting/usersetting.component.html"),
+            styles: [__webpack_require__("./src/app/useraccount/usersetting/usersetting.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_globalvariables_usersetting_service__["a" /* UsersettingService */]])
+    ], UsersettingComponent);
+    return UsersettingComponent;
+}());
+
 
 
 /***/ }),
