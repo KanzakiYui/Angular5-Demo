@@ -45,6 +45,19 @@ app.get('/assets/img/:name', function (request, response, next) {
     	if (error) next(error)
   	});
 });
+app.get('/assets/img/avatar/:name', function (request, response, next) {
+	var filename = request.params.name;
+	var filetype= filename.split(".").pop();
+	if(filetype==="jpg") filetype="image/jpeg";
+	else if(filetype==="png") filetype="image/png";
+	var options = {
+    	root: ClientFileDirectory+"/assets/img/avatar",
+    	headers: { 'Content-Type': filetype }
+  	};
+	response.sendFile(filename, options, function (error) {
+    	if (error) next(error)
+  	});
+});
 
 
 

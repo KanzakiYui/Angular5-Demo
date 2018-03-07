@@ -29,12 +29,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__useraccount_userhistory_userhistory_component__ = __webpack_require__("./src/app/useraccount/userhistory/userhistory.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__useraccount_usercollection_usercollection_component__ = __webpack_require__("./src/app/useraccount/usercollection/usercollection.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__useraccount_usersetting_usersetting_component__ = __webpack_require__("./src/app/useraccount/usersetting/usersetting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__messagebox_messagebox_component__ = __webpack_require__("./src/app/messagebox/messagebox.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -52,7 +54,8 @@ var routes = [
             { path: 'collection', component: __WEBPACK_IMPORTED_MODULE_5__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */] },
             { path: 'setting', component: __WEBPACK_IMPORTED_MODULE_6__useraccount_usersetting_usersetting_component__["a" /* UsersettingComponent */] }
         ]
-    }
+    },
+    { path: 'messagebox', component: __WEBPACK_IMPORTED_MODULE_7__messagebox_messagebox_component__["a" /* MessageboxComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -159,6 +162,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__useraccount_usercollection_usercollection_component__ = __webpack_require__("./src/app/useraccount/usercollection/usercollection.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__useraccount_usersetting_usersetting_component__ = __webpack_require__("./src/app/useraccount/usersetting/usersetting.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_globalvariables_usersetting_service__ = __webpack_require__("./src/app/services/globalvariables/usersetting.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__messagebox_messagebox_component__ = __webpack_require__("./src/app/messagebox/messagebox.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,6 +173,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 /* --------	3rd party module --------  */
+
 
 
 
@@ -192,7 +197,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__useraccount_userachievement_achievementsnippet_achievementsnippet_component__["a" /* AchievementsnippetComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__useraccount_userhistory_userhistory_component__["a" /* UserhistoryComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__useraccount_usercollection_usercollection_component__["a" /* UsercollectionComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__useraccount_usersetting_usersetting_component__["a" /* UsersettingComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__useraccount_usersetting_usersetting_component__["a" /* UsersettingComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__messagebox_messagebox_component__["a" /* MessageboxComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -212,6 +218,66 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/messagebox/messagebox.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "#globalMessageBoxMain{\r\n\twidth: 100%;\r\n\theight: 100vh;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n}\r\n#chatBarForMessage{\r\n\twidth: 15rem;\r\n\theight: 100%;\r\n\tborder-right: 1px solid #282c34;\r\n}\r\n#MessageBoxContent{\r\n\twidth: calc(100% - 30rem);\r\n\theight: 100%;\r\n}\r\n#chatMessageLog{\r\n\twidth: 15rem;\r\n\theight: 100%;\r\n}\r\n#chatBarForMessage div.chatBarTitle{\r\n\theight: 4rem; \r\n\tdisplay: -webkit-box; \r\n\tdisplay: -ms-flexbox; \r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tbackground-color: #282c34;\r\n}\r\n#chatBarForMessage div.chatBarTitle>span{\r\n\tfont-weight: bold;\r\n\tcolor: #61dafb;\r\n}\r\n#chatBarForMessage div.chatBarTitle>img{\r\n\theight: 2.5rem;\r\n\tmargin-right: 0.675rem;\r\n}\r\n#chatBarForMessage div.chatList{\r\n\theight: 6rem;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupBlock{\r\n\theight: 50%;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupBlock>button{\r\n\twidth: 33.33%;\r\n\theight: 100%;\r\n\tbackground-color: #fff;\r\n\toutline: none;\r\n\tborder: 0.2px solid #d4d0d0d4;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupBlock>button:hover{\r\n\tcursor: pointer;\r\n\tbackground-color: #46d8efd9;\r\n\tborder: 1px solid #46d8efd9;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupBlock>button.actived{\r\n\tbackground-color: #45b2ff;\r\n\tborder: 1px solid #45b2ff;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupBlock>button>img{\r\n\theight: 100%;\r\n\tpadding: 0.125rem 0.25rem;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupIndicator{\r\n\theight: 50%;\r\n\tfont-size: 1.2rem;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tborder-bottom: 1px solid #282c34;\r\n\tbackground-color: #282c34;\r\n}\r\n#chatBarForMessage div.chatList>div.chatGroupIndicator>p{\r\n\tmargin-bottom: 0;\r\n\tcolor: #61dafb;\r\n\tfont-weight: bold;\r\n}\r\n#chatBarForMessage div.currentChatList{\r\n\twidth: 100%;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\tpadding: 0.5rem;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\theight: 7rem;\r\n\tborder: 0.75px solid #c6dff1d1;\r\n\tpadding: 0 0.5rem 0.5rem 0.5rem;\r\n\tborder-radius: 0.5rem;\r\n\tmargin-bottom: 0.5rem;\r\n\tfont-size: 0.9rem;\r\n\tbackground-color: #c6dff1d1;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter:hover{\r\n\tcursor: pointer;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter>h4{\r\n\theight: 2rem;\r\n\tpadding: 0.25rem;\r\n\twidth: 100%;\r\n\ttext-align: center;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter>div{\r\n\theight: 4rem;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter>div>img{\r\n\theight: 100%;\r\n\tmargin-right: 0.75rem;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter>div>div{\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n}\r\n#chatBarForMessage div.currentChatList>div.shortcutForChatter>div>div>p{\r\n\tmargin-bottom: 0;\r\n\tfont-weight: bold;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/messagebox/messagebox.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"globalMessageBoxMain\">\n\t<div id=\"chatBarForMessage\">\n\t\t<div class=\"chatBarTitle\">\n\t\t\t<img src=\"assets/img/charBar_icon.png\"><span>Contact List</span>\n\t\t</div>\n\t\t<div class=\"chatList\">\n\t\t\t<div class=\"chatGroupBlock\">\n\t\t\t\t<button [attr.chattype]=\"1\" (click)=\"chatTypeChange($event)\">\n\t\t\t\t\t<img src=\"assets/img/friendChat_icon.png\">\n\t\t\t\t</button>\n\t\t\t\t<button [attr.chattype]=\"2\" (click)=\"chatTypeChange($event)\">\n\t\t\t\t\t<img src=\"assets/img/groupChat_icon.png\">\n\t\t\t\t</button>\n\t\t\t\t<button [attr.chattype]=\"3\" (click)=\"chatTypeChange($event)\">\n\t\t\t\t\t<img src=\"assets/img/strangerChat_icon.png\">\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t\t<div class=\"chatGroupIndicator\">\n\t\t\t\t<p *ngIf=\"chatType===1\">Chat with Friends</p>\n\t\t\t\t<p *ngIf=\"chatType===2\">Chat in Groups</p>\n\t\t\t\t<p *ngIf=\"chatType===3\">Chat with Strangers</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"chatListContent\">\n\t\t\t<div class=\"currentChatList\" *ngIf=\"chatType===1\">\n\t\t\t\t<div class=\"shortcutForChatter\">\n\t\t\t\t\t<h4>Yaopeng Liu</h4>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<img src=\"assets/img/avatar/Avatar_01.png\">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<p>Status: <span class=\"text-success\">Online</span></p>\n\t\t\t\t\t\t\t<p>Level: 15</p>\n\t\t\t\t\t\t\t<p>Location: ON</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"shortcutForChatter\">\n\t\t\t\t\t<h4>Alice Eden</h4>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<img src=\"assets/img/avatar/Avatar_02.png\">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<p>Status: <span class=\"text-danger\">Offline</span></p>\n\t\t\t\t\t\t\t<p>Level: 11</p>\n\t\t\t\t\t\t\t<p>Location: QC</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"shortcutForChatter\">\n\t\t\t\t\t<h4>Bruce Lee</h4>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<img src=\"assets/img/avatar/Avatar_03.png\">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<p>Status: <span class=\"text-danger\">Offline</span></p>\n\t\t\t\t\t\t\t<p>Level: 13</p>\n\t\t\t\t\t\t\t<p>Location: BC</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"shortcutForChatter\">\n\t\t\t\t\t<h4>James Cocordan</h4>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<img src=\"assets/img/avatar/Avatar_04.png\">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<p>Status: <span class=\"text-success\">Online</span></p>\n\t\t\t\t\t\t\t<p>Level: 5</p>\n\t\t\t\t\t\t\t<p>Location: ON</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div id=\"MessageBoxContent\">\n\t\n\t</div>\n\t<div id=\"chatMessageLog\">\n\t\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/messagebox/messagebox.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageboxComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MessageboxComponent = /** @class */ (function () {
+    function MessageboxComponent() {
+        this.chatType = 1;
+    }
+    MessageboxComponent.prototype.ngOnInit = function () {
+        $("#chatBarForMessage div.chatList>div.chatGroupBlock>button").eq(this.chatType - 1).toggleClass("actived");
+    };
+    MessageboxComponent.prototype.chatTypeChange = function (event) {
+        var type = $(event.target).attr("chattype");
+        if (type === undefined)
+            type = $(event.target).parent("button").attr("chattype");
+        $("#chatBarForMessage div.chatList>div.chatGroupBlock>button").eq(this.chatType - 1).toggleClass("actived");
+        this.chatType = Number(type);
+        $("#chatBarForMessage div.chatList>div.chatGroupBlock>button").eq(this.chatType - 1).toggleClass("actived");
+    };
+    MessageboxComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-messagebox',
+            template: __webpack_require__("./src/app/messagebox/messagebox.component.html"),
+            styles: [__webpack_require__("./src/app/messagebox/messagebox.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MessageboxComponent);
+    return MessageboxComponent;
 }());
 
 
